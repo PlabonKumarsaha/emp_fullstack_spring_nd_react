@@ -1,0 +1,5 @@
+package com.pks.emp.repository;
+
+public interface EmployeeRepository {
+
+}
