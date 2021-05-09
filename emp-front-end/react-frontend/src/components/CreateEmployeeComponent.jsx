@@ -30,9 +30,15 @@ class CreateEmployeeComponent extends PureComponent {
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
         let employee ={
-
-        }
+            firstName : this.state.firstName,
+            lastName : this.state.lastName,
+            emailId : this.state.emailId
+        };
+        console.log('emp =>'+ JSON.stringify(employee));
      
+    }
+    cancel(){
+        this.props.history.push('/employees')
     }
 
     
