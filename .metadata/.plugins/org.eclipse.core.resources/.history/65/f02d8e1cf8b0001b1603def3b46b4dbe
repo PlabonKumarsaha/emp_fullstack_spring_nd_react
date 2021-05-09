@@ -54,7 +54,7 @@ public class EmployeeController {
 		emp.setLastName(updatedEmployee.getLastName());
 		emp.setEmail_ID(updatedEmployee.getEmail_ID());
 		Employee updated = employeeRepository.save(emp);
-		return ResponseEntity.ok(updated);
+		return null;
 	}
 	
 

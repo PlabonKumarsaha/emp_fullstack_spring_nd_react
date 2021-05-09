@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,18 +42,6 @@ public class EmployeeController {
 		Employee emp = employeeRepository.findById(id)
 				.orElseThrow(()-> new ResourceNotFoundException("No such employee exists"));
 		return ResponseEntity.ok(emp);
-	}
-	
-	// update emp rest API
-	@PutMapping("/employees/{id}")
-	public ResponseEntity<Employee> updateEmployeeById(@PathVariable Long id,@RequestBody Employee updatedEmployee){
-		Employee emp = employeeRepository.findById(id)
-				.orElseThrow(()-> new ResourceNotFoundException("No such employee exists"));
-		emp.setFirstName(updatedEmployee.getFirstName());
-		emp.setLastName(updatedEmployee.getLastName());
-		emp.setEmail_ID(updatedEmployee.getEmail_ID());
-		Employee updated = employeeRepository.save(emp);
-		return ResponseEntity.ok(updated);
 	}
 	
 
