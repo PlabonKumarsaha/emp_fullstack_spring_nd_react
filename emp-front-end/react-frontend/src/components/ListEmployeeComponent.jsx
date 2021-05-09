@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import EmployeeService from '../services/EmployeeService'
 
 class ListEmployeeComponent extends PureComponent {
     constructor(props) {
@@ -9,7 +10,18 @@ class ListEmployeeComponent extends PureComponent {
         }
     }
 
+    componentDidMount(){
+        // called immidietly after a component is mounted.So http calls or api calls should be done here
+       
+        EmployeeService.getEmployees().then( res => {
+
+            this.setState({employees : res.data});
+        });
+        
+    }
+
     render() {
+
         return (
             <div>
 
@@ -33,7 +45,7 @@ class ListEmployeeComponent extends PureComponent {
 
                                 <td>{emp.firstName}</td>
                                 <td>{emp.lastName}</td>
-                                <td>{emp.emailId}</td>
+                                <td>{emp.email_ID}</td>
                             </tr>
                         )
                     }
