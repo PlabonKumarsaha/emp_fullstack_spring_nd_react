@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { PureComponent } from 'react'
+import EmployeeService from '../services/EmployeeService';
 
 class CreateEmployeeComponent extends PureComponent {
     constructor(props) {
@@ -32,10 +34,12 @@ class CreateEmployeeComponent extends PureComponent {
         let employee ={
             firstName : this.state.firstName,
             lastName : this.state.lastName,
-            emailId : this.state.emailId
+            email_ID : this.state.emailId
         };
+        EmployeeService.createEmployee(employee).then(res=>{
+            this.props.history.push('/employees')
+        });
         console.log('emp =>'+ JSON.stringify(employee));
-     
     }
     cancel(){
         this.props.history.push('/employees')
