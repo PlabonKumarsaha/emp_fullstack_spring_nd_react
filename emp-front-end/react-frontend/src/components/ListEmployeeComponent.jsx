@@ -8,6 +8,11 @@ class ListEmployeeComponent extends PureComponent {
         this.state = {
             employees : []
         }
+        this.addEmployee = this.addEmployee.bind(this)
+    }
+
+    addEmployee(){
+        this.props.history.push('/add-employee')
     }
 
     componentDidMount(){
@@ -27,6 +32,8 @@ class ListEmployeeComponent extends PureComponent {
 
             <h2 className = "text-center">Employees List</h2>
             <div className = "row">
+            <button onClick={ () => this.addEmployee()} className="btn btn-Primary">ADD emp </button>
+
             <table className = "table table-striped table-bordered">
                 <thead>
                     <tr>
