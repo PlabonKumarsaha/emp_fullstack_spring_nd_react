@@ -5,6 +5,7 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import {BrowserRouter as Router,Route, Switch} from 'react-router-dom'
 import CreateEmployeeComponent from './components/CreateEmployeeComponent';
+import UpdateEmployee from './components/UpdateEmployee';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <Route path = "/" exact component = {ListEmployeeComponent}></Route>
       <Route path = "/employees" exact component = {ListEmployeeComponent}></Route>
       <Route path = "/add-employee" component = {CreateEmployeeComponent}></Route>
-      
+      <Route path = "/update-employee/:id" component = {UpdateEmployee}></Route>
       </switch>
 
       <div>
