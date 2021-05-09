@@ -53,6 +53,9 @@ class ListEmployeeComponent extends PureComponent {
                                 <td>{emp.firstName}</td>
                                 <td>{emp.lastName}</td>
                                 <td>{emp.email_ID}</td>
+                                <td>
+                                <button onClick={ () => this.editEmployee(emp.id)} className="btn btn-info">Update </button>
+                                </td>
                             </tr>
                         )
                     }

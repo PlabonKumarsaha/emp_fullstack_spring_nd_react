@@ -11,6 +11,9 @@ class UpdateEmployee extends PureComponent {
 
     render() {
         return (
+            <div>
+                
+            </div>
             
         )
     }
