@@ -38,7 +38,6 @@ class ViewEmployeeComponent extends PureComponent {
                         <div> { this.state.employee.email_ID }</div>
                     </div>
                 </div>
-
             </div>
         </div>
         )
