@@ -1,6 +1,5 @@
 package com.pks.emp.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,13 +60,10 @@ public class EmployeeController {
 	}
 	// delete emp rest API
 	@DeleteMapping("/employees/{id}")
-	public ResponseEntity<Map<String,Boolean>>deleteEmp(@PathVariable Long id){
+	public Map<String,Boolean>deleteEmp(@PathVariable Long id){
 		Employee emp = employeeRepository.findById(id)
 				.orElseThrow(()-> new ResourceNotFoundException("No such employee exists"));
-		employeeRepository.delete(emp);
-		Map<String, Boolean>response = new HashMap<>();
-		response.put("deleted",Boolean.TRUE);
-		return ResponseEntity.ok(response);
+		return null;
 		
 	}
 	
