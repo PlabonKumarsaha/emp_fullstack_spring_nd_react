@@ -41,6 +41,9 @@ class UpdateEmployee extends PureComponent {
         };
      
         console.log('emp =>'+ JSON.stringify(employee));
+        EmployeeService.updateEmployee(employee,this.state.id).then((res) => {
+            this.props.history.push('/employees')
+        });
         
     }
 
