@@ -8,12 +8,21 @@ class ListEmployeeComponent extends PureComponent {
         this.state = {
             employees : []
         }
-        this.addEmployee = this.addEmployee.bind(this)
+        this.addEmployee = this.addEmployee.bind(this);
+        this.editEmployee = this.editEmployee.bind(this);
+        
     }
 
     addEmployee(){
         this.props.history.push('/add-employee')
     }
+
+   
+    editEmployee(id){
+         //pass id to the path
+        // when a user calls the update button , the user is navigated to the particular id
+        this.props.history.push(`/update-employee/${id}`)
+        }
 
     componentDidMount(){
         // called immidietly after a component is mounted.So http calls or api calls should be done here

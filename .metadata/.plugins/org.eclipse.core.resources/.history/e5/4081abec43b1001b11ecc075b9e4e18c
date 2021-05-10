@@ -17,7 +17,7 @@ import com.pks.emp.exception.ResourceNotFoundException;
 import com.pks.emp.model.Employee;
 import com.pks.emp.repository.EmployeeRepository;
 
-@CrossOrigin(origins= "http://localhost:3000")
+@CrossOrigin(origins= "http://localhost:3001")
 @RestController
 @RequestMapping("/api/v1/")
 public class EmployeeController {
