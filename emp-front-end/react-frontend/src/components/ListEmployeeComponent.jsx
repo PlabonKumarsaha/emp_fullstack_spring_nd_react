@@ -11,6 +11,7 @@ class ListEmployeeComponent extends PureComponent {
         this.addEmployee = this.addEmployee.bind(this);
         this.editEmployee = this.editEmployee.bind(this);
         this.deleteEmployee = this.deleteEmployee.bind(this);
+        this.viewEmployee = this.viewEmployee.bind(this);
         
     }
 
@@ -32,6 +33,10 @@ class ListEmployeeComponent extends PureComponent {
                 employees: this.state.employees.filter(employee => employee.id !=id)});
 
         });
+    }
+
+    viewEmployee(id){
+        this.props.history.push(`/view-employee/${id}`)
     }
 
     componentDidMount(){
@@ -75,6 +80,7 @@ class ListEmployeeComponent extends PureComponent {
                                 <td>
                                 <button onClick={ () => this.editEmployee(emp.id)} className="btn btn-info">Update </button>
                                 <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(emp.id)} className="btn btn-danger">Delete </button>
+                                <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(emp.id)} className="btn btn-info">View  </button>
                                 </td>
                             </tr>
                         )
