@@ -27,6 +27,11 @@ class ListEmployeeComponent extends PureComponent {
 
     deleteEmployee(id){
 
+        EmployeeService.deleteEmployee(id).then(res => {
+            this.setState({
+                employees: this.state.employees.filter(employee => employee.id !=id)});
+
+        });
     }
 
     componentDidMount(){
