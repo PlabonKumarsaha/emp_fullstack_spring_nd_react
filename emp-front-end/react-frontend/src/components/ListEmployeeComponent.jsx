@@ -10,6 +10,7 @@ class ListEmployeeComponent extends PureComponent {
         }
         this.addEmployee = this.addEmployee.bind(this);
         this.editEmployee = this.editEmployee.bind(this);
+        this.deleteEmployee = this.deleteEmployee.bind(this);
         
     }
 
@@ -23,6 +24,10 @@ class ListEmployeeComponent extends PureComponent {
         // when a user calls the update button , the user is navigated to the particular id
         this.props.history.push(`/update-employee/${id}`)
         }
+
+    deleteEmployee(id){
+
+    }
 
     componentDidMount(){
         // called immidietly after a component is mounted.So http calls or api calls should be done here
@@ -64,6 +69,7 @@ class ListEmployeeComponent extends PureComponent {
                                 <td>{emp.email_ID}</td>
                                 <td>
                                 <button onClick={ () => this.editEmployee(emp.id)} className="btn btn-info">Update </button>
+                                <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(emp.id)} className="btn btn-danger">Delete </button>
                                 </td>
                             </tr>
                         )
