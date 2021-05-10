@@ -6,6 +6,7 @@ import FooterComponent from './components/FooterComponent';
 import {BrowserRouter as Router,Route, Switch} from 'react-router-dom'
 import CreateEmployeeComponent from './components/CreateEmployeeComponent';
 import UpdateEmployee from './components/UpdateEmployee';
+import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path = "/employees" exact component = {ListEmployeeComponent}></Route>
       <Route path = "/add-employee" component = {CreateEmployeeComponent}></Route>
       <Route path = "/update-employee/:id" component = {UpdateEmployee}></Route>
+      <Route path = "/view-employee/:id" component = {ViewEmployeeComponent}></Route>
       </switch>
 
       <div>
